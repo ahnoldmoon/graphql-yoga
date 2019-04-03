@@ -1,9 +1,11 @@
-type Munnt {
+type Person {
+  id: Int!
   name: String!
   age: Int!
   gender: String!
 }
 
 type Query {
-  person: Munnt!
+  people: [Person]!
+  person(id: Int!): Person
 }
