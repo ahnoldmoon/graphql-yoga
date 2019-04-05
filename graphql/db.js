@@ -1,53 +1,3 @@
-// export const people = [
-//     {
-//       id: "0",
-//       name: "Munnt",
-//       age: 18,
-//       gender: "female"
-//     },
-//     {
-//       id: "1",
-//       name: "Jisu",
-//       age: 18,
-//       gender: "female"
-//     },
-//     {
-//       id: "2",
-//       name: "Japan Guy",
-//       age: 18,
-//       gender: "male"
-//     },
-//     {
-//       id: "3",
-//       name: "Daal",
-//       age: 18,
-//       gender: "male"
-//     },
-//     {
-//       id: "4",
-//       name: "JD",
-//       age: 18,
-//       gender: "male"
-//     },
-//     {
-//       id: "5",
-//       name: "moondaddi",
-//       age: 18,
-//       gender: "male"
-//     },
-//     {
-//       id: "6",
-//       name: "flynn",
-//       age: 18,
-//       gender: "male"
-//     }
-//   ];
-
-// export const getById = id => {
-//     const filteredPeople = people.filter(person => person.id === String(id));
-//     return filteredPeople[0];
-// }
-
 let movies = [
   {
     id: 0,
@@ -74,13 +24,13 @@ let movies = [
 export const getMovies = () => movies;
 
 export const getById = id => {
-  const filteredMovies = movies.filter(movie => movie.id === String(id));
+  const filteredMovies = movies.filter(movie => movie.id === id);
   return filteredMovies[0];
 };
 
 export const deleteMovie = id => {
-  const cleanedMovies = movies.filter(movie => movie.id !== String(id));
-  if (movies.length > cleanedMovies.lenght) {
+  const cleanedMovies = movies.filter(movie => movie.id != id);
+  if (movies.length > cleanedMovies.length) {
     movies = cleanedMovies;
     return true;
   } else {
@@ -96,4 +46,4 @@ export const addMovie = (name, score) => {
   };
   movies.push(newMovie);
   return newMovie;
-}
+};
